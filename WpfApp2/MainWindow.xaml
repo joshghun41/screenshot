@@ -12,9 +12,9 @@
             <ColumnDefinition Width="589*"/>
         </Grid.ColumnDefinitions>
         <Button Content="&lt;-" HorizontalAlignment="Left" Margin="10,297,0,0" VerticalAlignment="Top" Width="80" Height="41" FontSize="18" FontWeight="Bold" Foreground="Red" Click="Button_Click_1"/>
-        <Button Content="->" HorizontalAlignment="Left" Margin="106,297,0,0" VerticalAlignment="Top" Height="41" Width="84" FontSize="18" FontWeight="Bold" Foreground="#FF00FF10"/>
+        <Button Content="->" HorizontalAlignment="Left" Margin="106,297,0,0" VerticalAlignment="Top" Height="41" Width="84" FontSize="18" FontWeight="Bold" Foreground="#FF00FF10" Click="Button_Click_2"/>
         <Button Content="ScreenShot" HorizontalAlignment="Center" Margin="0,353,0,0" VerticalAlignment="Top" Click="Button_Click" Width="127" Height="53"/>
-        <Image Name="photo" Grid.Column="1" HorizontalAlignment="Left" Height="431" VerticalAlignment="Top" Width="583"/>
+        <Image  Name="photo" Grid.Column="1" HorizontalAlignment="Left" Height="431" VerticalAlignment="Top" Width="583"/>
 
     </Grid>
 </Window>

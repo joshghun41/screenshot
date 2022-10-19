@@ -27,11 +27,17 @@ namespace WpfApp2
         {
             InitializeComponent();
             Path = "";
+            this.DataContext = this;
+            images = new List<BitmapImage>();
+
         }
+        public List<BitmapImage> images { get; set; }
+        public int i { get; set; } = 0;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
             String filename = "ScreenCapture-" + DateTime.Now.ToString("ddMMyyyy-hhmmss") + ".png";
-         
+
             int screenLeft = (int)SystemParameters.VirtualScreenLeft;
 
             int screenTop = (int)SystemParameters.VirtualScreenTop;
@@ -45,7 +51,7 @@ namespace WpfApp2
 
             g.CopyFromScreen(screenLeft, screenTop, 0, 0, bitmap_Screen.Size);
 
-            Path = "C:\\Users\\Gulm_be75\\source\\repos\\WpfApp2\\WpfApp2\\Images\\"+filename ;
+            Path = "C:\\Users\\Help\\Source\\Repos\\screenshot1\\WpfApp2\\Images\\" + filename;
             bitmap_Screen.Save(Path);
 
             Image finalImage = new Image();
@@ -56,10 +62,30 @@ namespace WpfApp2
             finalImage.Source = logo;
             photo.Source = logo;
 
+            i++;
+            images.Add(logo);
+
+
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            
+            if (i > 0)
+            {
+                i--;
+                photo.Source = images[i];
+            }
+
+
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (i < images.Count-1)
+            {
+                i++;
+                photo.Source = images[i];
+            }
+
         }
     }
 }
